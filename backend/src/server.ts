@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 
 import authRoutes from "./modules/auth/auth.routes";
 import quranRoutes from "./modules/quran/quran.routes";
+import progressRoutes from "./modules/progress/progress.routes";
 
 dotenv.config();
 
@@ -21,6 +22,9 @@ app.use("/auth", authRoutes);
 
 /* QURAN */
 app.use("/quran", quranRoutes);
+
+/* PROGRESS */
+app.use("/progress", progressRoutes);
 
 const PORT = process.env.PORT || 5000;
 
