@@ -3,6 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 
 import authRoutes from "./modules/auth/auth.routes";
+import quranRoutes from "./modules/quran/quran.routes";
 
 dotenv.config();
 
@@ -15,7 +16,11 @@ app.get("/health", (req, res) => {
   res.json({ status: "ok" });
 });
 
+/* AUTH */
 app.use("/auth", authRoutes);
+
+/* QURAN */
+app.use("/quran", quranRoutes);
 
 const PORT = process.env.PORT || 5000;
 
